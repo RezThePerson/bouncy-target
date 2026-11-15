@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://canl6wuwm6dsx"]
+
+[ext_resource type="Script" uid="uid://clx0llcmfsgs7" path="res://scripts/game/main.gd" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://csb82rpvjc5s6" path="res://scripts/game/ball.gd" id="2_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://n3m0cblg4f0y" path="res://assets/walls.png" id="3_iywne"]
+[ext_resource type="Texture2D" uid="uid://8sx0h32t74th" path="res://assets/play button.jpg" id="3_lbhrr"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0xm2m"]
+b = Vector2(1, 578)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h2yge"]
+b = Vector2(672, -7)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ky7ql"]
+a = Vector2(2, 2)
+b = Vector2(692, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1bvp3"]
+a = Vector2(-288, -8)
+b = Vector2(-276, 602)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 65.795135
+
+[node name="Game" type="Node2D" unique_id=2124993773]
+script = ExtResource("1_lnu2h")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1833313806]
+
+[node name="Right Wall" type="StaticBody2D" parent="Walls" unique_id=1016590104]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall" unique_id=442661156]
+position = Vector2(721, 31)
+shape = SubResource("SegmentShape2D_0xm2m")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="Walls" unique_id=1749543229]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom Wall" unique_id=1977799967]
+position = Vector2(54, 621)
+shape = SubResource("SegmentShape2D_h2yge")
+
+[node name="Top Wall" type="StaticBody2D" parent="Walls" unique_id=1442582940]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top Wall" unique_id=1357200433]
+position = Vector2(29, 19)
+shape = SubResource("SegmentShape2D_ky7ql")
+
+[node name="Left Wall" type="StaticBody2D" parent="Walls" unique_id=93338874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall" unique_id=1069524309]
+position = Vector2(322, 27)
+shape = SubResource("SegmentShape2D_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls" unique_id=1513280824]
+position = Vector2(495, 325)
+scale = Vector2(0.9075, 0.83333325)
+texture = ExtResource("3_iywne")
+
+[node name="DrawnWalls" type="StaticBody2D" parent="." unique_id=1398478766]
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=204493248]
+script = ExtResource("2_lbhrr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1940604407]
+position = Vector2(424.75, 381.875)
+scale = Vector2(0.24687505, 0.33754206)
+texture = ExtResource("3_lbhrr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1813880879]
+position = Vector2(427, 387)
+shape = SubResource("CircleShape2D_7mycd")

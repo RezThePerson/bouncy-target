@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Bouncy Target"
+run/main_scene="uid://c4w4oyhsvija5"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=1100
+window/size/viewport_height=650
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 
@@ -27,3 +33,4 @@ window/stretch/aspect="expand"
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
